@@ -1,0 +1,1320 @@
+@charset "UTF-8";
+/**  Created by zlj on 2014/12/18 http://90buhou.com */
+
+*{margin: 0;padding: 0;}
+body{font:12px/1.5 Microsoft YaHei,Tahoma,SimSun,Verdana;}
+a{text-decoration: none; color: #000;}
+li{list-style: none;}
+em,i{font-style: normal;}
+.clear{
+	clear: both;
+}
+.clear:after, .clearfix:after {
+    clear: both;
+    content: " ";
+    display: block;
+    zoom: 1;
+}
+/*头部header*/
+html{width: 100%;height: 100%;overflow: hidden;}
+body{min-width: 960px;width: 100%;height: 100%;}
+
+.header{width: 100%; height: 50px; border-bottom: 1px solid #d8dce5;background: #fff; position: relative;min-width: 960px;}
+.header .logo{float: left; width: 160px;height: 30px;background: url(img/wy-logo.png) no-repeat 19px 10px; padding: 9px 14px 0 19px;}
+
+.header .app {float: left; height: 100%; padding-left: 15px;position: relative;white-space: nowrap;z-index: 10;}
+.header .app a.iphone,.header .app a.android{float: left; width: 31px;height: 100%; background: url(img/lay-header.png) no-repeat;}
+.header .app a.iphone{background-position: 0 -300px;}
+.header .app a.android{background-position: -39px -300px;}
+
+.header .app a.iphone:hover {background-position: -0px -350px;}
+.header .app a.android:hover{background-position: -39px -350px;}
+
+/*app提示*/
+.header .app .tip{
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 83%;
+    padding: 5px 10px;
+    background: #32abff;
+    border-radius: 3px;
+    border: 1px #3091f2 solid;
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+.header .app .tip a{
+    color: #eeeeee;
+}
+.header .app .tip a:hover{
+    color: #ffffff;
+}
+.header .app .tip .arr,
+.header .app .tip .arr span{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    line-height:0;
+    font-size:0;
+    border-color: transparent;
+    border-style: dashed;
+}
+.header .app .tip .arr{
+    left: 50%;
+    top: -6px;
+    margin-left: -3px;
+    border-width: 6px;
+    border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #3091f2;
+}
+.header .app .tip .arr span{
+    left: -5px;
+    top: 1px;
+    border-width: 5px;
+    border-top-width: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #32abff;
+}
+.header .app .tip_ios{
+    background: #ff9d11;
+    border-color: #ea8a00;
+    left: -36px;
+}
+.header .app .tip_ios .arr{
+    border-bottom-color: #ea8a00;
+}
+.header .app .tip_ios .arr span{
+    border-bottom-color: #ff9d11;
+}
+.header .app .tip_android{
+    background: #73bd13;
+    border-color: #67ae00;
+    left: -7px;
+}
+.header .app .tip_android .arr{
+    border-bottom-color: #67ae00;
+}
+.header .app .tip_android .arr span{
+    border-bottom-color: #73bd13;
+}
+
+/*公告*/
+.header .ad_link{position: absolute; width: 460px; min-width: 440px; height: 100%; right: 270px; }
+.header .ad_link a{float: right;display: block;height: 100%;line-height: 48px; padding:0 15px; color: #7d838f}
+.header .ad_link a:hover{text-decoration: underline;}
+/*搜索*/
+.header .search{float: right; width: 160px;height: 28px; border: 1px solid #c2c3ca; background: #fff; position: relative;margin:10px 10px 0;}
+.header .search .ico{width: 13px;height: 13px;background: url(img/lay-header.png) no-repeat 0 -168px; position: absolute;left: 9px;top: 8px;}
+.header .search label{position: absolute;left: 30px;top: 8px;height: 13px;line-height: 13px;color: #373737;}
+.header .search input{position: absolute;top: 6px;left: 28px; width: 130px;height: 18px;line-height: 18px;background: #fff;border: none;opacity: 0.5;outline: none;}
+.header .search:hover{border: 1px solid #5ba8fe;}
+.header .search:hover  .ico{background-position: -32px -168px;}
+
+
+
+/*用户*/
+.header .user{float: right; width: 80px;height: 100%;margin-right: 10px;position: relative;}
+.header .user .normal{height: 43px; border: 1px solid #fff; border-bottom: none; background: #fff;}
+.header .user .inner{width: 100%; height: 43px;background: url(img/lay-header.png) no-repeat 7px -200px;}
+.header .user img{width: 32px; height: 32px;margin:7px 0 0 16px;}
+
+.header .user:hover .hover{display: block;};
+.header .user:hover .normal{border-color:#c8ccd5; }
+.header .user .hover {
+    display: none;
+    background: none repeat scroll 0 0 #fff;
+    border-color: #c8ccd5;
+    border-radius: 0;
+    color: #666;
+    right: 10px;
+    top: 45px;
+    width: 168px;
+    z-index: 10;
+    box-shadow: 0 1px 2px #ccc;
+    font-size: 12px;
+    position: absolute;
+}
+.header .user .hover .ui_head {
+    padding: 0 15px;
+}
+.header .user .hover .username {
+    -moz-binding: url("ellipsis.xml#ellipsis");
+    color: #333333;
+    display: inline-block;
+    line-height: 22px;
+    overflow: hidden;
+    padding-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 138px;
+}
+.header .user .hover .user_text {
+    color: #7d838f;
+}
+.header .user .hover .space_info {
+    margin-bottom: 5px;
+}
+.header .user .hover .ui_menu .menu_text {
+    color: #7d838f;
+}
+.header .user .hover .space {
+    display: inline-block;
+    width: 136px;
+    background-color: #edeff4;
+    border: 1px solid #d7d9e0;
+    padding: 0;
+}
+.header .user .hover .space_bar {
+    background-color: #66d21d;
+    border: 1px solid #3f9a00;
+    margin: -1px;
+    display: block;
+    font-size: 0;
+    height: 8px;
+}
+.header .user .hover .ui_menu {
+    margin-top: 10px;
+    padding: 0 1px 1px;
+}
+.header .user .hover .ui_menu a {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #e6e7ec;
+    color: #333333;
+    display: block;
+    padding: 7px 3px 7px 15px;
+    position: relative;
+    vertical-align: bottom;
+}
+
+
+/*.header .user .hover{position: absolute;right: 0px;top: 45px;width: 168px; border: 1px solid #c8ccd5;color: #666;background: #fff;display: none;}
+.header .user .ui_head{padding: 5px 15px;}
+.header .user .username{display: block;width: 138px;line-height: 22px;color: #333;}
+.header .user .ui_menu{margin-top: 10px;}
+.header .user .ui_menu a{position: relative;display: block;padding: 7px 3px 7px 15px;color: #333;vertical-align: bottom; border-top: 1px solid #c8ccd5;}
+*/
+
+/*侧边菜单*/
+/*添加*/
+.sidemenu{position: absolute;left: 0;top: 51px;width: 160px;background: #eaedf4;z-index: 5;}
+.sidemenu .add{margin: 14px 0 10px 15px;position: relative;}
+.sidemenu .add a{width: 128px;height: 34px;line-height: 34px;background: #3091f2;color: #FFF;border: 1px #288cef solid;display: inline-block;text-align: center;font-size: 13px;}
+.sidemenu .add i{display: inline-block;font-size: 22px;margin-right: 4px;height: 22px;line-height: 22px;margin-top: 4px;vertical-align: top;}
+.sidemenu .add span{display: inline-block;vertical-align: top;}
+/*目录*/
+.sidebox{position: relative;top: 0;width: 100%;height: 700px;overflow: hidden;}
+
+#side_nav_box{position: absolute;left:0; top:0; width: 100%;}
+.side_nav li{position: relative;height: 32px;padding: 2px 0;margin-bottom: 3px;}
+.side_nav li a{display: block;height: 32px;height: 100%;line-height: 32px;color: #505254;text-indent: 50px;font-size: 14px;border-bottom: 1px #eaedf4 solid;border-top: 1px #eaedf4 solid; background: url(img/ico-message.png) no-repeat 27px 0px;}
+.side_nav .disk {
+	background-position: 28px 1px;
+} 
+.side_nav .recent {
+	background-position: 27px -31px;
+} 
+.side_nav .doc {
+	background-position: 27px -95px;
+} 
+.side_nav .photo {
+	background-position: 27px -62px;
+} 
+.side_nav .audio {
+	background-position: 27px -191px;
+} 
+.side_nav .video {
+	background-position: 27px -159px;
+} 
+.side_nav .note {
+	background-position: 27px -127px;
+} 
+.side_nav .offline {
+	background-position: 27px -224px;
+} 
+.side_nav .clipboard {
+	background-position: 27px -255px;
+} 
+.side_nav .share {
+	background-position: 27px -287px;
+} 
+.side_nav .recycle {
+	background-position: 27px -320px;
+} 
+.side_nav a.current{background-color: #ced4e0;border-bottom: 1px #c8ccd5 solid;border-top: 1px #c8ccd5 solid;}
+.side_nav li a:hover{background-color: #e0e4ed;border-bottom: 1px #d8dce5 solid;border-top: 1px #d8dce5 solid;}
+.side_nav a.current:hover{background-color: #ced4e0;border-bottom: 1px #c8ccd5 solid;border-top: 1px #c8ccd5 solid;}
+.side_nav li.gap{
+	height: 20px;
+	font-size: 0;
+	line-height: 0px;
+	padding: 0;
+	margin: 0;
+}
+.side_nav li span{
+	display:inline-block;
+	margin: 9px 0;
+	width: 100%;
+	font-size: 0;
+	height: 0px;
+	line-height: 0px;
+	border-top: 1px solid #d8dce5;
+}
+/*侧栏app下载*/
+.install-download {
+    width: 130px;
+    height: 42px;
+    padding: 32px 0 10px 11px;
+}
+.install-download a {
+    background:url(img/install-download.png) no-repeat left top;
+    display: block;
+    float: left;
+    height: 42px;
+}
+.install-download .android {
+    background-position: 0 0;
+    width: 48px;
+}
+.install-download .iphone {
+    background-position: -48px 0;
+    width: 45px;
+}
+.install-download .ipad {
+    background-position: -93px 0;
+    width: 32px;
+}
+.install-download .android:hover {
+    background-position: 0 -42px;
+}
+.install-download .iphone:hover {
+    background-position: -48px -42px;
+}
+.install-download .ipad:hover {
+    background-position: -93px -42px;
+}
+
+/*侧栏滚动条*/
+.side-scrollbar {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    display: none;
+}
+.side-scrollbar .bar {
+    background-color: rgba(179, 184, 194, 0.5);
+    border-radius: 4px;
+    height: 100%;
+    margin-left: 12px;
+    position: absolute;
+    width: 8px;
+    cursor: pointer;
+}
+.side-scrollbar .bar-hover{
+	background-color: #b3b8c2;
+}
+.sideborder {
+    border-right: 1px solid #d8dce5;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4px;
+}
+/*右工具条*/
+.main{
+    position: relative;
+    /*width: 100%;*/
+    z-index: 4;
+    height: 100%;
+}
+.toolbar{
+	padding-right: 12px;
+	padding: 13px 12px 13px 172px;
+	background-color: #f5f6f9;
+    position: relative;
+    z-index: 10;
+    display: none;
+}
+/*左信息*/
+.bar_message{
+	float: left;
+}
+.bar_message a {
+	display: inline-block;
+	height: 34px;
+    line-height: 34px;
+    padding: 0 18px;
+    text-align: center;
+	font-size: 13px;
+	background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #c7c9cf;
+    color: #505254;
+    margin-right: 1px;
+}
+.bar_message a.refresh {
+    padding: 0 10px;
+}
+.bar_message a i,.bar_message a span{
+	display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 7px;
+    vertical-align: top;
+}
+/*.bar_message a i{
+	width: 20px;
+	background: url(img/ico-message.png) no-repeat scroll -999px -999px #fff;
+	opacity: 0.6;
+}*/
+.bar_message a:hover i{
+	opacity: 1;
+}
+
+
+
+/*右查看模式view mode*/
+.view_mode {
+    float: right;
+    margin-left: 20px;
+    position: relative;
+    width: 98px;
+    z-index: 1;
+}   
+.view_mode .sortview, .view_mode .dbview{
+    background: url(img/ico-message.png) no-repeat 0 0 #fff;
+    border: 1px solid #a7adb7;
+    float: right;
+    height: 34px;
+    margin-left: -1px;
+    opacity: 0.7;
+    position: relative;
+    width: 48px;
+}
+.view_mode .dbview {
+    background-position: 17px -1087px;
+}
+.view_mode .sortview {
+    background-position: 31px -1118px;
+}
+.view_mode .ico {
+    background: url(img/ico-message.png) no-repeat 2px -999px #fff;
+    height: 18px;
+    position: absolute;
+    width: 18px;
+}
+.view_mode .sortview .ico {
+    left: 10px;
+    top: 9px;
+}
+.view_mode a:hover{
+    opacity:1;
+}
+.view_mode .sortview:hover{
+	border-bottom: none;
+	z-index: 1;
+}
+/* 排序sortview:hover部分 */
+.vm_box {
+    background:#fff;
+    border: 1px solid #c8ccd5;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 0;
+    top: 34px;
+    width: 150px;
+    z-index: 10;
+    display: none;
+}
+
+/**
+ * JS设置
+ */
+/*.view_mode:hover .vm_box{
+	display: block;
+}*/
+
+.vm_box a {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    color: #020202;
+    display: block;
+    height: 27px;
+    line-height: 27px;
+    margin: 1px;
+    position: relative;
+    text-indent: 32px;
+}
+.vm_box a .ico {
+    left: 6px;
+    top: 5px;
+    opacity: 0.6;
+}
+.view_mode .vm_time .ico {
+    background-position: 2px -1064px;
+}
+.view_mode .vm_az .ico {
+    background-position: 2px -1031px;
+}
+.view_mode .vm_thum .ico {
+    background-position: 2px -999px;
+}
+.vm_box a:hover,.vm_box .focus a {
+    background-color: #f3f8ff;
+    border-bottom: 1px solid #d5e5f5;
+    border-top: 1px solid #d5e5f5;
+    }
+.vm_box a:hover .ico, .vm_box .focus a .ico {
+    background-color: #f3f8ff;
+    opacity: 1;
+}
+
+/*main_box*/
+.main_box{
+	margin-left: 160px;
+	position: relative;
+	height: 100%;
+	border-top: solid 1px #c8ccd5;
+	padding-right: 12px;
+
+
+	/*height: 200px;  */
+	/**
+	 * 高度需要JS设置
+	 */
+
+}
+/*目录树*/
+#sideBarList{
+	/*float: left;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 12px;
+    height: 100%;
+    width: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #FFF;
+    border-right: 1px #e6e9f0 solid;
+    z-index: 5;
+	display:none;
+}
+#sideBarList .item  {
+	padding-right: 5px;
+    padding-left: 14px;
+	background: #fff;
+	margin-top: 1px;
+	zoom: 1;
+	border: 1px solid #fff;
+    cursor: pointer;
+}
+#sideBarList .item a {
+	display: block;
+	position: relative;
+	height: 22px;
+	line-height: 22px;
+	padding: 2px 0;
+	padding-left: 22px;
+	color: #161719;
+	background: url(img/folder-tree.png) no-repeat 3px 6px;
+
+}
+#sideBarList .item span{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;    
+}
+#sideBarList .item i {
+	position: absolute;
+	left: -13px;
+	top: 0;
+	width: 15px;
+	height: 26px;
+	background-image: url(img/folder-tree.png);
+	background-repeat: no-repeat;
+	background-position: 4px -43px;
+	opacity: 0.8;
+}
+#sideBarList .item-open i{
+	background-position: 3px -92px;   
+}
+
+#sideBarList .item:hover {
+	background: #f3f8ff;
+	border: 1px solid #d5e5f5;
+}
+#sideBarList .list-selected,#sideBarList .list-selected:hover {
+	background: #e7f2fe;
+	border: 1px solid #bfdaf4;
+}
+#sideBarList .item i:hover{
+    opacity: 1;
+}
+
+/**
+ * 目录树--webkit滚动条设置
+ */
+::-webkit-scrollbar{
+    width:8px;
+    height:10px;
+    background-color:#f5f6f9;
+    border:solid 1px #eff1f5;
+}
+::-webkit-scrollbar:hover{
+    background:#DCE1E4;
+}
+::-webkit-scrollbar-thumb{
+    background-color:#d8dce5;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color:#9198a6;
+    border-color:#9198a6;
+}
+
+
+/*文件展示*/
+.main_content{
+    position: relative;
+    /*left: 184px;*/
+
+    /*width: 100%;*/
+    background:#fff;
+    height: 100%;    
+    z-index: 4;
+}
+.dbview-module #sideBarList{
+    display:block;
+}
+.dbview-module .main_content{
+    padding-left: 184px;
+}
+/*--文件路径*/
+.file_path {
+    background: none repeat scroll 0 0 #fff;
+    border-bottom: 1px solid #e6e9f0;
+    height: 30px;
+    position: relative;
+	display:none;
+}
+.file_path .checkall {
+    background: url(img/ico.png) no-repeat 10px -260px rgba(0, 0, 0, 0);
+    border-right: 1px solid #d7d9e0;
+    float: left;
+    height: 30px;
+    position: relative;
+    width: 34px;
+    z-index: 50;
+}
+.file_path .checkalled {
+    background-position: 10px -310px;
+}
+.main_path {
+    float: left;
+    height: 31px;
+    line-height: 30px;
+    overflow: hidden;
+    padding-left: 5px;
+    position: relative;
+}
+.main_path .path {
+    background: url(img/main-path.png) no-repeat right -50px rgba(0, 0, 0, 0);
+    color: #020202;
+    cursor: pointer;
+    float: left;
+    height: 100%;
+    margin-left: -19px;
+    padding: 0 18px 0 25px;
+    position: relative;
+}
+.main_path .path:hover{
+    background-position: right -100px;
+}
+.main_path .current:hover, .main_path .current {
+    background-position: right -200px;
+}
+/*--文件列表*/
+.main_wrap {
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    /*overflow-x: hidden;
+    overflow-y: auto;*/
+}
+.disk-view{
+    /*padding-right: 12px;*/
+    height: 100%;
+	display:none;
+}
+
+.disk-view .g-empty,.disk-view .files-list,.disk-view .files{
+    display: block;
+    height: 100%;
+/*    overflow-x: hidden;
+    overflow-y: auto;*/
+    position: relative;
+}
+.disk-view .files{
+    overflow-x: hidden;
+    overflow-y: auto;  
+}
+/*空目录*/
+/*.sort-cloud-empty .empty-box, .sort-folder-empty .empty-box {
+    margin-top: -120px;
+}*/
+.g-empty .empty-box {
+    font-family: "Microsoft YaHei";
+/*    left: 50%;
+    margin-top: -150px;
+    margin-top: -120px;
+    position: absolute;
+    top: 50%;*/
+    width: 500px;
+    margin:0 auto;
+}
+.g-empty .ico {
+    background: url(img/g-empty.png) no-repeat center 0;
+    margin: 0 auto;
+    height: 90px;
+    width: 200px;
+}
+.g-empty p{
+    color: #afb5bf;
+    text-align: center;
+}
+.g-empty .title {
+    font-size: 22px;
+    height: 30px;
+    line-height: 30px;
+    
+}
+
+.g-empty .content {
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+}
+
+/*列表形式*/
+.list .tool,.list .tool a,.list .size,.list .time,.list .source {
+    display: block;
+    float: left;
+}
+.files-list .list {
+    border-color: #eaebf0 #fff;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: -1px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.files-list .list .img,.files-list .list .checkbox,.files-list .list .name,
+.files-list .list .size,.files-list .list .time,.files-list .list .dimensional {
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+    padding: 6px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+ }
+.files-list .list .img,.files-list .list .checkbox{
+    position: absolute;
+    width: 34px;
+}
+.files-list .list .img{
+    left: 30px;
+ }
+.files-list .list .checkbox {
+    background: url(img/ico.png) no-repeat 10px -254px rgba(0, 0, 0, 0);
+    cursor: default;
+    left: 0;
+}
+.files-list .ui-selected .list .checkbox {
+    background-position: 10px -304px;
+}
+.files-list .list .name {
+    width: 46%;
+    float: left;
+}
+.files-list .list .name em {
+    padding-left: 70px;
+    padding-right: 10px;
+    width: 100%;
+}
+/*点击重命名*/
+.list .fileedit{
+    display: none;
+}
+.list .fileedit .fileinput {
+    text-align: center;
+    width: 100px;
+    border: 1px solid #3091f2;
+    cursor: text;
+    height: 22px;
+    outline: medium none;
+}
+
+
+
+.files-list .list .tool {
+    height: auto;
+    padding: 0;
+    visibility: hidden;
+    width: 29%;
+}
+.files-list .list:hover,.files-list .ui-selected .list  {
+    background: none repeat scroll 0 0 #eaf5ff;
+    border: 1px solid #eaebf0;
+}
+/*拖拽过程中碰撞hover*/
+.files-list .ui-dropping .list{
+    background: none repeat scroll 0 0 #cce4fb;
+    border-color: #94c0f3;
+}
+
+.files-list .list:hover .tool {
+    visibility:visible;
+}
+
+.files-list .list .tool a{
+    float: right;
+    padding: 13px 6px;
+}
+
+.files-list .list .size {
+    text-align: right;
+    width: 8%;
+    float: left;
+}
+.files-list .list .time {
+    text-align: right;
+    width: 14%;
+    float: left;
+}
+.files-list .list .dimensional a {
+	float:right;
+    padding: 7px 6px 13px 0;
+}
+.files-list .list .size, .files-list .list .time, .files-list .list .remain, .files-list .list .view, .files-list .download, .files-list .list .status, .files-list .list .source {
+    color: #868686;
+}
+
+
+/*列表模式文件类型图标*/
+.filetype {
+    background: url(img/file-small.png) no-repeat -163px -900px;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+/*不识别的类型图标*/
+.ico-file {    
+    background-position: -163px -900px;
+} 
+
+.icon-folder {
+    background-position: 1px 2px;
+}
+.icon-txt {
+    background-position: -81px -162px;
+}
+.icon-zip {
+    background-position: 1px -818px;
+}
+.icon-rar {
+    background-position: -163px -818px;
+}
+.icon-doc {
+    background-position: 1px -80px;
+}
+.icon-pdf {
+    background-position: 1px -162px;
+}
+.icon-psd {
+    background-position: -409px -244px;
+}
+
+
+
+
+/*缩略图形式*/
+.files-view .files{
+    padding: 4px 0 0 4px;
+}
+.files-view .list-wrap {
+    float: left;
+    height: 123px;
+}
+.files-view .list {
+    background: none repeat 0 0 #fff;
+    border: 1px solid #fff;
+    float: left;
+    height: 118px;
+    margin: 0 5px 5px 0;
+    transition: background 0.3s ease 0s;
+    width: 118px;
+    position: relative;
+    height: auto;
+}
+.files-view .list .checkbox {
+    background: url(img/ico.png) no-repeat 0 -370px rgba(0, 0, 0, 0);
+    height: 30px;
+    left: -1px;
+    opacity: 0;
+    padding: 0;
+    top: -1px;
+    width: 30px;
+    position: absolute;
+}
+
+.files-view .list .img {
+    display: block;
+    height: 64px;
+    padding: 6px 2px 2px;
+    position: static;
+    text-align: center;
+    width: auto;
+	line-height: 34px;
+    overflow: hidden;
+}
+	/*缩略图形式文件类型图标*/
+.files-view .filetype {
+    display: inline-block;
+    height: 64px;
+    overflow: hidden;
+    width: 64px;
+	background: url(img/file.png) no-repeat -228px -1254px;
+	text-align: center;
+}
+
+.files-view .ico-file {      /*不识别的类型图标*/
+    background-position: -228px -1254px;
+}
+.files-view .icon-folder {
+    background-position: 0px 2px;
+}
+.files-view .icon-txt {
+    background-position: -114px -228px;
+}
+.files-view .icon-zip {
+    background-position: 1px -1140px;
+}
+.files-view .icon-rar {
+    background-position: -228px -1140px;
+}
+.files-view .icon-doc {
+    background-position: 1px -114px;
+}
+.files-view .icon-pdf {
+    background-position: 1px -228px;
+}
+.files-view .icon-psd {
+    background-position: -570px -342px;
+}
+
+
+
+
+	/*QQ离线ico*/
+.files-view .icon-offline {
+    background-position: -228px 2px;
+}
+
+.files-view .list span.name {
+    float: none;
+	height: auto;
+    width: auto;
+    line-height: 25px;
+    text-align: center;
+    padding-bottom:5px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.files-view .list span.name em{
+    line-height: 17px;
+    /*max-height: 34px;*/
+    overflow: hidden;
+    padding: 5px 0 0 0;
+    white-space: normal;
+    word-break: break-all;
+}
+.files-view .list:hover .checkbox{
+    opacity: 1;
+}
+.files-view .list-wrap .list:hover{
+    background:#f3f9fe;
+    border: 1px solid #c3d8f0;
+}
+.files-view .ui-selected .list,.files-view .ui-selected:hover .list{
+    background:#e9f3fd;
+    border: 1px solid #c3d8f0;
+}
+.files-view .ui-selected .list .checkbox,.files-view .ui-selected:hover .list .checkbox  {
+    background-position: 0 -420px;
+    opacity: 1;
+}
+
+.files-view .list .tool,.files-view .list .tool a,.files-view .list .size,.files-view .list .time,.files-view .list .source {
+    display: none;
+}
+
+/*目录树left值~~~~~~~*/
+#sideBarList .item{
+    padding-left: 14px;
+}
+#sideBarList .item-box .item{
+    padding-left:28px;
+}
+#sideBarList .item-box .item-box .item{
+    padding-left:42px;
+}
+#sideBarList .item-box .item-box .item-box .item{
+    padding-left:56px;
+}
+/*~~~~~~~*/
+
+
+.ico-del,.ico-rename,.ico-move,.ico-share,.ico-down,.ico-download,.ico-mkdir,.ico-refresh,.ico-clearrecnet,.ico-dimensional {
+    background: url(img/ico-message.png) no-repeat -999px -999px #fff;
+    display: block;
+    height: 20px;
+    opacity: 0.6;
+    width: 20px;
+
+    
+    float: left;
+}
+.ico-del {
+    background-position: 0 -326px;
+}
+.ico-rename {
+    background-position: 0 -518px;
+}
+.ico-move {
+    background-position: 0 -455px;
+}
+.ico-share {
+    background-position: 1px -390px;
+    margin-right: 2px;
+}
+.ico-down, .ico-download {
+    background-position: 0 -358px;
+}
+.ico-mkdir {
+    background-position: 0 -550px;
+}
+.ico-refresh {
+    background-position: 3px -711px;
+}
+.ico-clearrecnet {
+    background-position: 0 -742px;
+}
+/*二维码*/
+.ico-dimensional {
+    background-position: 0 -966px;
+}
+
+
+
+.ico-del:hover,.ico-rename:hover,.ico-move:hover,.ico-share:hover,.ico-download:hover{
+    opacity: 1;
+}
+
+/*自定义右键*/
+.content-menu {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #c8ccd5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: absolute;
+    z-index: 10;
+    display: none;
+}
+.content-menu ul {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.content-menu .large {
+    width: 160px;
+}
+.content-menu li {
+    height: 32px;
+    overflow: hidden;
+}
+
+.content-menu .split {
+    font-size: 1px;
+    height: 1px;
+    line-height: 1px;
+    margin: 1px 0;
+    overflow: hidden;
+}
+.content-menu .split .line {
+    font-size: 1px;
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden;
+    padding-left: 27px;
+}
+.content-menu .split .line div {
+    background: none repeat scroll 0 0 #eeeff4;
+    font-size: 1px;
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden;
+}
+
+.content-menu a {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    color: #3a404a;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    padding: 5px 0;
+    position: relative;
+}
+.content-menu i {
+    left: 3px;
+    opacity: 0.7;
+    position: absolute;
+    top: 5px;
+}
+.content-menu span {
+    display: block;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 0 12px 0 32px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.content-menu a:hover, .content-menu a.flash-hover {
+    background: none repeat scroll 0 0 #f3f8ff;
+    border-bottom: 1px solid #d5e5f5;
+    border-top: 1px solid #d5e5f5;
+}
+/*自定义右键 end*/
+/*左侧目录点击对应*/
+.module-disk .disk-toolbar,.module-disk .file_path,.module-disk #disk_body{display:block;}
+.module-recent .recent-toolbar{display:block;}
+.module-doc .sort-doc-toolbar,.module-doc #doc_body{display:block;}
+.module-photo .photo-toolbar{display:block;}
+.module-audio .sort-audio-toolbar{display:block;}
+.module-video .sort-video-toolbar{display:block;}
+.module-note .sort-note-toolbar{display:block;}
+/* 左侧目录点击对应 到笔记 */
+
+/* 拖拽虚框 */
+.ui-selectable-helper {
+    position: absolute;
+    background-color: #d5eaf5;
+    border: 1px dashed #000;
+    opacity: 0.55;
+    z-index: 1000;
+    display: none;
+}
+/* end拖拽虚框 */
+/* 选中拖拽小图标 */
+.filesmall{position: absolute; z-index: 1000; width: 120px;height: 107px; display: none;}
+.filesmall div{ background: url("img/file-small.png") no-repeat 1px 2px; height: 34px;width: 34px;position: absolute;left: 30px;top: 30px;display: none;}
+.filesmall i{position: absolute;left: 0;top: 0px;border: 1px solid rgba(0,0,0,0);}
+.filesmall .div1{z-index: 4;left: 38px;top: 33px;}
+.filesmall .div2{z-index: 3;left: 46px;top: 36px;}
+.filesmall .div3{z-index: 2;left: 54px;top: 39px;}
+.filesmall .div4{z-index: 1;left: 62px;top: 42px;}
+.filesmall span{height: 18px;padding: 0 5px; text-align: center;line-height: 18px; background:rgba(87,172,255,1);color: #fff;border: 1px solid rgb(52,148,243); border-radius: 45%;position: absolute; left: 30px;top: 30px;z-index: 5;font-size: 12px;font-weight: bold;}
+
+.class1 .div1{display:block;}
+.class2 .div1,.class2 .div2{display:block;}
+.class3 .div1,.class3 .div2,.class3 .div3{display:block;}
+.class4 div{display:block;}
+/* 选中拖拽小图标 end */
+
+
+/* 添加：hover  文件、笔记 */
+.dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #c8ccd5;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    left: 15px;
+    position: absolute;
+    top: 100px;
+    width: 128px;
+    z-index: 10;
+    display:none;
+}
+.dropdown-menu li {
+    border-bottom: 1px solid #e6e7ec;
+    line-height: 22px;
+}
+.dropdown-menu a {
+    color: #666;
+    display: block;
+    padding: 5px 0 5px 17px;
+}
+.dropdown-menu a:hover{
+    background: #f3f8ff;
+}
+.dropdown-menu a i {
+    background: url(img/ico-new.png) no-repeat left top rgba(0, 0, 0, 0);
+    height: 15px;
+    margin-top: 5px;
+    position: absolute;
+    right: 7px;
+    width: 27px;
+}
+/* 添加：hover  文件、笔记 end */
+
+/* 左侧最下面app安装下载弹窗 */
+.full-pop {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #9198a6;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+    color: #020202;
+    font-family: "Microsoft YaHei";
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    width: 450px;
+    z-index: 1000;
+}
+.full-pop-download {
+    /*margin-left: -294px;*/
+    width: 588px;
+}
+
+.full-pop-header {
+    border-bottom: 1px solid #d8dce5;
+    cursor: move;
+    font-size: 18px;
+    font-weight: normal;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 18px;
+    padding-right: 40px;
+}
+
+.full-pop-header .inner {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+.pop-download {
+    overflow: hidden;
+    padding: 35px 50px 35px 20px;
+}
+.pop-download .qrcode {
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    width: 221px;
+}
+.pop-download .info {
+    border-left: 1px solid #e6e6e6;
+    float: left;
+    padding-left: 50px;
+    width: 240px;
+}
+.pop-download .way h4 {
+    color: #333;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.pop-download .btn-goto, .pop-download .btn-send {
+    background: url("img/app-download.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+.pop-download .btn-goto, .pop-download .btn-send {
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "microsoft yahei";
+    outline: medium none;
+    padding: 1px 2px;
+}
+.pop-download .btn-send {
+    background-position: 0 -132px;
+    display: block;
+    float: left;
+    height: 30px;
+    margin-left: 10px;
+    width: 60px;
+    font-size: 12px;
+}
+.pop-download .btn-goto {
+    background-position: 0 -80px;
+    display: block;
+    font-size: 16px;
+    height: 50px;
+    margin-top: 24px;
+    width: 140px;
+}
+
+.pop-download .way-2, .pop-download .way-3 {
+    margin-top: 30px;
+}
+.pop-download .way .desc {
+    color: #999;
+    padding: 5px 0;
+}
+.pop-download .phonenum {
+    margin-top: 5px;
+}
+
+.pop-download .ipt-phonenum {
+    background-color: #f2f2f2;
+    border: 1px solid #b3b3b3;
+    float: left;
+    font-family: "microsoft yahei";
+    font-size: 18px;
+    height: 28px;
+    padding: 0 5px;
+    width: 148px;
+}
+
+.full-pop-close {
+    color: #c7ced8;
+    font-family: "Microsoft Yahei";
+    font-size: 34px;
+    font-weight: normal;
+    height: 34px;
+    line-height: 34px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    top: 6px;
+    width: 34px;
+}
+.ui-mask {
+    background-color: #000;
+    height: 100%;
+    left: 0;
+    opacity: 0.65;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 998;
+}
+.ui-mask-white{
+    background-color: #fff;
+}
+.full-pop,.ui-mask{display: none;}
+/* 左侧最下面app安装下载弹窗 end */
+

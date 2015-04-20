@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Document</title>
+<link rel="stylesheet" href="style.css">
+
+
+<style id='css'></style>
+    <script src="data.js"></script>
+    <script src="File.js"></script>
+
+<script src="Drag.js"></script>
+    <script src="index.js"></script>
+
+
+ 
+
+
+
+</head>
+<body class="module-disk dbview-module">
+
+    <div class="header">
+        <a href="#" class="logo" target='_blank'></a>
+        <div class="app">
+            <a href="#" title="下载微云iPhone版" class="iphone"></a>
+            <a href="#" title="下载微云Android版" class="android"></a>
+            <div class="tip tip_android">
+                <a href="#">下载微云Android版</a>
+                <span class="arr"><span>
+                </span></span>
+            </div>
+            <div class="tip tip_ios">
+                <a href="#">下载微云iPhone版</a>
+                <span class="arr"><span>    
+                </span></span>
+            </div>
+        </div>
+
+        <div class="ad_link">
+            <a href="#">反馈</a>
+            <a href="#">关于腾讯微云开展“净网行动”公告</a>
+        </div>
+
+        <!-- user -->
+        <div class="user">
+            <div class="normal">
+                <div class="inner">
+                    <img src="img/g.gif" />
+                </div>
+            </div>
+
+            <!--user hover -->
+            <div class="hover">
+                <div class="ui_head">
+                    <span class="username">路過丶花未眠</span>
+                    <div>
+                        <div class="user_text space_info">
+                            <label>已使用：</label>
+                            <span>203.41M</span>
+                        </div>
+                        <div class="user_text space_info">
+                            <label>总容量：</label>
+                            <span>11269.03G</span>
+                        </div>
+                        <div class="space" title="0%">
+                            <div style="width: 0%;" class="space_bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="ui_menu">
+                    <li><a href="javascript:void(0)"><i class="icon-pwd"></i>独立密码<span class="menu_text" style="display: none;">（未开启）</span></a></li>
+                    <li><a href="javascript:void(0)"><i></i>https模式<span class="menu_text">（未开启）</span></a></li>
+                    <li><a target="_blank" href="http://www.weiyun.com/download.html?WYTAG=weiyun.app.web.disk"><i class="icon-dwn"></i>下载客户端</a></li>
+                    
+                    <li><a href="#"><i class="icon-exit"></i>退出</a></li>
+                </ul>
+                <!-- <i class="ui-arr"></i>
+                <i class="ui-arr ui-tarr"></i> -->
+            </div>
+
+        </div>
+        <!-- search -->
+        <div class="search">
+            <i class="ico"></i>
+            <label>搜索全部文件</label>
+            <input type="text" />
+        </div>
+    </div>
+    <div class="sidemenu">
+        <div class="add">
+            <a id="upload_dropdown" href="javascript:;"><i>+</i><span>添加</span></a>
+        </div>
+        <div id="sidebox" class="sidebox">
+            <div id="side_nav_box">
+                <ul class="side_nav"  id="sidenav">
+                    <li><a class="disk current" href="javascript:;">目录</a></li>
+                    <li><a class="recent" href="javascript:;">最近</a></li>
+                    <li class="gap"><span></span></li>
+                    <li><a class="doc" href="javascript:;">文档</a></li>
+                    <li><a class="photo" href="javascript:;">图片</a></li>
+                    <li><a class="audio" href="javascript:;">音乐</a></li>
+                    <li><a class="video" href="javascript:;">视频</a></li>
+                    <li><a class="note" href="javascript:;">笔记</a></li>
+                    <li class="gap"><span></span></li>
+                    <li><a class="offline" href="javascript:;">QQ离线文件</a></li>
+                    <li class="gap"><span></span></li>
+                    <li><a class="clipboard" href="javascript:;">剪贴板</a></li>
+                    <li class="gap"><span></span></li>
+                    <li><a class="share" href="javascript:;">分享的链接</a></li>
+                    <li><a class="recycle" href="javascript:;">回收站</a></li>
+                </ul>
+                <div class="install-download">
+                    <a title="安装android版" href="#" class="android"></a>
+                    <a title="安装iphone版" href="#" class="iphone"></a>
+                    <a title="安装ipad版" href="#" class="ipad"></a>
+                </div>
+            </div>
+
+            <div id="side_scrollbar" class="side-scrollbar">
+                <div class="bar"></div>
+            </div>
+
+        </div>
+
+        <i class="sideborder"></i>
+    </div>
+
+    <!-- main -->
+    <div class="main">
+        <!-- 工具条 -->
+       <!--  <div class="toolbar clear" style="display:block;">
+            <div class="bar_message">
+                <a class="down" href="javascript:;"><i></i><span>下载</span></a>
+                <a class="share" href="javascript:;"><i></i><span>分享</span></a>
+                <a class="move" href="javascript:;"><i></i><span>移动到</span></a>
+                <a class="rename" href="javascript:;"><i></i><span>重命名</span></a>
+                <a class="del" href="javascript:;"><i></i><span>删除</span></a>
+                <a class="mkdir" href="javascript:;"><i></i><span>新建文件夹</span></a>
+                <a class="refresh" href="javascript:;"><i></i><span></span></a>
+            </div>  -->
+            <!-- 右查看模式view mode -->
+          <!--   <div class="bar_vm">
+                <a href="#" title="查看目录树" class="dbview"></a>              
+                <a title="排序方式" href="#" class="sortview"><i class="ico"></i></a>                
+                <ul class="vm_box">
+                    <li><a href="#" class="vm_time"><i class="ico"></i>按时间排序</a></li>
+                    <li><a href="#" class="vm_az"><i class="ico"></i>按字母顺序</a></li>
+                    <li class="focus"><a href="#" class="vm_thum"><i class="ico"></i>显示缩略图</a></li>
+                </ul>
+            </div>
+        </div> -->
+
+        <!-- 目录工具条 -->
+        <div class="toolbar clear disk-toolbar">
+            <div class="bar_message">
+                <a href="javascript:;"><i class="ico-down"></i><span>下载</span></a>
+                <a href="javascript:;"><i class="ico-share"></i><span>分享</span></a>
+                <a href="javascript:;"><i class="ico-move"></i><span>移动到</span></a>
+                <a href="javascript:;"><i class="ico-rename"></i><span>重命名</span></a>
+                <a href="javascript:;"><i class="ico-del"></i><span>删除</span></a>
+                <a href="javascript:;"><i class="ico-mkdir"></i><span>新建文件夹</span></a>
+                <a href="javascript:;"><i class="ico-refresh"></i><span></span></a>
+            </div> 
+            <!-- 右查看模式view mode -->
+            <div class="view_mode">
+                            
+                <a href="#" title="排序方式" class="sortview vm_thum"><i class="ico"></i></a>
+                <a href="#" title="隐藏目录树" class="dbview"></a>  
+
+                <ul class="vm_box">
+                    <li><a href="#" class="vm_time"><i class="ico"></i>按时间排序</a></li>
+                    <li><a href="#" class="vm_az"><i class="ico"></i>按字母顺序</a></li>
+                    <li class="focus"><a href="#" class="vm_thum"><i class="ico"></i>显示缩略图</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 工具条end -->
+        <!-- 工具条 最近 -->
+        <div class="toolbar clear recent-toolbar">
+            <div class="bar_message">
+                <a href="javascript:;"><i class="ico-clearrecnet"></i><span>清空记录</span></a>
+                <a href="javascript:;"><i class="ico-refresh"></i><span></span></a>     
+            </div>
+        </div>
+        <!-- 工具条 最近end -->
+        <!-- 工具条 文档 -->
+        <div class="toolbar clear sort-doc-toolbar">
+            <div class="bar_message">
+                <a href="javascript:;"><i class="ico-del"></i><span>删除</span></a>
+                <a href="javascript:;"><i class="ico-refresh"></i><span></span></a>     
+            </div>
+        <!-- 视图切换 -->            <!--<div class="view-mode">
+            <span><a title="按时间排序" class="vm-l vm-time" href="javascript:void(0)"><i></i></a></span>
+            <span><a title="按A到Z顺序排序" class="vm-r vm-a-z" href="javascript:void(0)"><i></i></a></span>
+        </div>-->
+
+        <div class="view_mode">             
+            <a title="排序方式" href="#" class="sortview vm_time"><i class="ico"></i></a>                
+            <ul class="vm_box">
+                <li class="focus"><a href="#" class="vm_time"><i class="ico"></i>按时间排序</a></li>
+                <li><a href="#" class="vm_az"><i class="ico"></i>按字母顺序</a></li>
+            </ul>
+        </div>
+
+
+          <!-- 分类视图切换 -->
+            <div class="view-mode-sort">
+                <span class="on"><a href="javascript:;" class="vm-l" title="查看所有文档"><em>全部</em></a></span>
+                <span><a href="javascript:;" class="vm-m" title="查看所有doc文档"><em>DOC</em></a></span>
+                <span><a href="javascript:;" class="vm-m" title="查看所有excel表格"><em>XLS</em></a></span>
+                <span><a href="javascript:;" class="vm-m" title="查看所有ppt"><em>PPT</em></a></span>
+                <span><a href="javascript:;" class="vm-r" title="查看所有pdf电子文档"><em>PDF</em></a></span>
+                <!-- *******a的class暂时没用到 -->
+            </div>
+        </div>
+        <!-- 工具条 文档end -->
+        <style>
+        .view-mode-sort {
+            border-left: 1px solid #b3b6bd;
+            float: right;
+            margin-left: 20px;
+        }
+
+        .view-mode-sort span {
+            display: block;
+            float: left;
+        }
+        .view-mode-sort span a {
+            background-color: #fff;
+            border: 1px solid #c7c9cf;
+            color: #505254;
+            display: inline-block;
+            height: 34px;
+            line-height: 34px;
+            margin-left: -1px;
+            outline: medium none;
+            padding: 0 15px;
+            text-align: center;
+        }
+        .view-mode-sort span a:hover{
+            position: relative;
+            *position:static;
+            border: 1px #a7adb7 solid;
+        }
+        .view-mode-sort .on a, .view-mode-sort .on a:hover {
+            background: none repeat scroll 0 0 #e0e4ed;
+            border: 1px solid #c7c9cf;
+            position: static;
+        }
+
+        .module-doc .view-mode-sort, .module-doc .view-mode-audio {
+            float: none;
+            left: 50%;
+            margin: 0 0 0 -60px;
+            position: absolute;
+            
+        }
+
+
+        </style>
+
+        <!-- 工具条 图片 -->
+
+        <div class="toolbar clear photo-toolbar">
+
+            <div class="bar_message">
+                <a href="javascript:;"><i class="ico-mkdir"></i><span>新建分组</span></a>
+                <!-- <a href="javascript:;"><i class="ico-movegroup"></i><span>更改分组</span></a> -->
+                <a href="javascript:;"><i class="ico-del"></i><span>删除</span></a>
+                <a href="javascript:;"><i class="ico-refresh"></i><span></span></a>     
+            </div>
+            <div class="view-mode-sort">
+                <span class="on"><a href="#" class="vm-l" title="拍摄时间"><em>拍摄时间</em></a></span>
+                <span><a href="#" class="vm-m" title="分组"><em>分组</em></a></span>
+                <span><a href="#" class="vm-r" title="全部"><em>全部</em></a></span>
+            </div>
+        </div>
+        <!-- 工具条 图片end -->
+        <!-- 工具条 音乐 -->
+        <div class="toolbar clear sort-audio-toolbar">
+            <div class="bar_message">
+                <a href="javascript:;"><i class="ico-del"></i><span>删除</span></a>
+                <a href="javascript:;"><i class="ico-refresh"></i><span></span></a>     
+            </div>
+            <div class="view_mode">             
+                <a title="排序方式" href="#" class="sortview vm_time"><i class="ico"></i></a>                
+                <ul class="vm_box">
+                    <li class="focus"><a href="#" class="vm_time"><i class="ico"></i>按时间排序</a></li>
+                    <li><a href="#" class="vm_az"><i class="ico"></i>按字母顺序</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 工具条 音乐end -->
+        <!-- 工具条 视频 -->
+        <div class="toolbar clear sort-video-toolbar">
+            <div class="bar_message">
+                <a href="javascript:;"><i class="ico-del"></i><span>删除</span></a>
+                <a href="javascript:;"><i class="ico-refresh"></i><span></span></a>     
+            </div>
+            <div class="view_mode">             
+                <a title="排序方式" href="#" class="sortview vm_time"><i class="ico"></i></a>                
+                <ul class="vm_box">
+                    <li class="focus"><a href="#" class="vm_time"><i class="ico"></i>按时间排序</a></li>
+                    <li><a href="#" class="vm_az"><i class="ico"></i>按字母顺序</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 工具条 视频end -->
+        <!-- 工具条 笔记 -->
+        <div class="toolbar clear sort-note-toolbar">
+            <div class="bar_message">
+                <a href="javascript:;"><i class="ico-mkdir"></i><span>新建笔记</span></a>
+                <a href="javascript:;"><i class="ico-share"></i><span>分享</span></a>
+                <a href="javascript:;"><i class="ico-del"></i><span>删除</span></a>
+                <a href="javascript:;"><i class="ico-refresh"></i><span></span></a>
+            </div>
+        </div>
+        <!-- 工具条 笔记end -->
+        <!-- 工具条end -->
+       
+        <div class="main_box">
+            <!-- 目录树 -->
+            <div id="sideBarList">
+
+                <div id="weiyun" class="item item-open list-selected" style="padding-left:14px;">
+                    <a href="#"><span title="微云">微云</span><i></i></a>
+                </div>
+            
+                <div id="sideBar" class="item-box itembox-open">
+                    <!--<div class="item item-open" style="padding-left:28px;">
+                        <a href="#"><span title="QQ">QQ</span><i></i></a>
+                    </div> 
+                    <div class="item-box">
+                        <div class="item" style="padding-left:42px;">
+                            <a href="#"><span title="收到的QQ文件">收到的QQ文件</span></a>
+                        </div>
+                        <div class="item-box"></div>
+                    </div>-->
+                </div>
+            </div>
+            <!-- 目录树 end  sideBarList -->
+            <!-- 目录 -->
+            <div class="main_content"> 
+                <!-- 文件路径 -->
+                <div class="file_path">
+                    <label class="checkall"></label>
+                    <div id="mainpath" class="main_path">
+                        <!-- <a href="#" class="path" style="z-index:3;">微云</a> -->
+                        <!-- <a href="#" class="path current" style="z-index:2;">张利晶1102</a> -->
+                    </div>
+                </div> 
+
+                <!-- 文件展示 -->
+                <div class="main_wrap">
+                    <div id="disk_body" class="disk-view ">
+                        <!-- 空目录时的提示 -->
+                        <div style="display:none;" class="g-empty">
+                            <div class="empty-box">
+                                <div class="ico"></div>
+                                <p class="title">暂无文件</p>
+                                <p class="content">请点击左上角的“上传”按钮添加</p>
+                            </div>
+                        </div>
+
+                        <!-- 文件 -->
+                        <!-- files-list列表形式 files-view缩略图形式（有些样式继承列表形式）-->
+                        <div class="files-list files-view ">
+                            <!-- 文件列表 -->
+                            <div id="files" class="files">
+                                
+                                <!-- QQ离线文件  默认不可删除修改 -->
+                                <!-- <div class="list-wrap" >
+                                    <div class="list clear ">
+                                        <span class="img"><i class="filetype icon-offline" ></i> </span>
+                                        <span class="name"><em title="QQ离线文件">QQ离线文件</em></span> 
+                                        <span class="tool"> </span>
+                                        <span class="size">&nbsp;</span>
+                                        <span class="time"></span>  
+                                    </div>
+                                </div> -->
+
+                                <!-- 显示缩略图形式模块 -->
+                                <!-- <div class="list-wrap  ui-selected">
+                                    <div class="list clear "> 
+                                        <label class="checkbox"></label>
+                                        <span class="img"><i class="filetype icon-folder"></i></span>
+                                        <span class="name">
+                                        <em title="张利晶1102">张利晶1102</em>
+
+                                        <em class="fileedit">
+                                            <input type="text" value="" class="fileinput">
+                                        </em>
+
+                                        </span> -->
+                                        <!-- 点击重命名需要生成fileedit  上面em隐藏，下面em显示 -->
+                                        
+                                        <!-- 列表形式用到 -->
+                                        <!-- <span class="tool">                
+                                            <a href="#" title="删除"><i class="ico-del"></i></a>                            
+                                            <a href="#" title="重命名"><i class="ico-rename"></i></a>                            
+                                            <a href="#" title="移动"><i class="ico-move"></i></a>                            
+                                            <a href="#" title="分享"><i class="ico-share"></i></a>                            
+                                            <a href="#" title="下载"><i class="ico-download"></i></a>            
+                                        </span>                                    
+                                        <span class="size">&nbsp;</span>
+                                        <span class="time">2014-12-19 10:20</span>  -->
+                                        <!-- 列表形式用到end -->
+
+                                    <!-- </div>
+                                </div> -->
+                                <!-- 显示缩略图形式模块end -->
+
+                            </div>
+                            <!-- files -->
+                        </div>
+                        <!-- files-list -->
+                    </div>
+                    <!-- disk-view(包括空目录) -->
+	<!-- 文档列表内容区域 -->
+    <div id="doc_body" data-label-for-aria="文档列表内容区域" class="disk-view">
+        <div class="files-list">
+            <!-- 文件列表 -->
+            <div class="files">
+
+                <div class="list clear">
+                    <label aria-label="10月下前端知识集-月刊.pdf" class="checkbox"></label>
+                    <span class="img"><i class="filetype icon-pdf"></i></span>
+                    <span class="name"><p class="text"><em title="10月下前端知识集-月刊.pdf">10月下前端知识集-月刊</em></p></span>    
+                    <span class="tool">
+                        <a href="#" title="删除" class="link-del"><i class="ico-del"></i></a>
+                        <a href="#" title="重命名" class="link-rename"><i class="ico-rename"></i></a>
+                        <a href="#" title="分享" class="link-share"><i class="ico-share"></i></a>
+                        <a href="#" title="下载" class="link-download"><i class="ico-download"></i></a>
+                    </span>                                    
+                    <span class="size">416.1K</span>
+                    <span class="time">2014-11-09 13:45:44</span>                
+                    <span class="dimensional">
+                        <a href="#" title="二维码" class="link-dimensional"><i class="ico-dimensional"></i></a>
+                    </span>
+                </div>
+
+                <div class="list clear">
+                    <label aria-label="腾讯WEB前端开发三轮面试经历及面试题.wps" class="checkbox"></label>
+                    <span class="img"><i class="filetype icon-wps"></i></span>
+                    <span class="name"><p class="text"><em title="腾讯WEB前端开发三轮面试经历及面试题.wps">腾讯WEB前端开发三轮面试经历及面试题.wps</em></p></span>    
+                    <span class="tool">
+                        <a href="#" title="删除" class="link-del"><i class="ico-del"></i></a>
+                        <a href="#" title="重命名" class="link-rename"><i class="ico-rename"></i></a>
+                        <a href="#" title="分享" class="link-share"><i class="ico-share"></i></a>
+                        <a href="#" title="下载" class="link-download"><i class="ico-download"></i></a>
+                    </span>                                    
+                    <span class="size">23.5K</span>
+                    <span class="time">2014-11-06 12:53:05</span>                
+                    <span class="dimensional">
+                        <a href="#" title="二维码" class="link-dimensional"><i class="ico-dimensional"></i></a>
+                    </span>
+                </div>
+
+                <div class="list clear">
+                    <label aria-label="百度前端面试题----珠峰培训.docx" class="checkbox"></label>
+                    <span class="img"><i class="filetype icon-docx"></i></span>
+                    <span class="name"><p class="text"><em title="百度前端面试题----珠峰培训.docx">百度前端面试题----珠峰培训.docx</em></p></span>    
+                    <span class="tool">
+                        <a href="#" title="删除" class="link-del"><i class="ico-del"></i></a>
+                        <a href="#" title="重命名" class="link-rename"><i class="ico-rename"></i></a>
+                        <a href="#" title="分享" class="link-share"><i class="ico-share"></i></a>
+                        <a href="#" title="下载" class="link-download"><i class="ico-download"></i></a>
+                    </span>                                    
+                    <span class="size">93.5K</span>
+                    <span class="time">2014-11-04 12:53:05</span>                
+                    <span class="dimensional">
+                        <a href="#" title="二维码" class="link-dimensional"><i class="ico-dimensional"></i></a>
+                    </span>
+                </div>  
+
+
+            </div>
+        </div>
+        <a style="display: none;" class="load-more" href="javascript:void(0)"><i class="icon-loading"></i>正在加载</a>
+    </div>
+    <!-- 文档列表内容区域end -->
+                </div>
+                <!-- main_wrap 主题展示部分-->
+            </div>
+            <!-- main_content(包括文件路径) -->
+
+        </div>
+        <!-- main_box 目录树及右侧end -->
+       
+
+    </div>
+    <!-- main end -->
+
+<!-- 添加hover文件、笔记 -->
+<ul class="dropdown-menu" id="upload_dropdown_menu">
+    <li><a href="#">文件</a></li>
+    <li><a href="#">笔记<i></i></a></li>
+</ul>
+
+<!-- 自定义右键 -->
+<div  id="RightClickMenu" class="content-menu">
+    <ul class="large">                                                                
+        <li><a href="javascript:void(0);"><i class="ico-null"></i><span>下载</span></a></li>
+        <li id="rightDel"><a href="javascript:void(0);"><i class="ico-null"></i><span>删除</span></a></li>
+        <li><a href="javascript:void(0);"><i class="ico-null"></i><span data-action="text">移动到</span></a></li>                                                                            
+        <li id="rightRename"><a href="javascript:void(0);"><i class="ico-null"></i><span>重命名</span></a></li>
+        <li class="split"><div class="line"><div></div></div></li>                        
+        <li><a href="javascript:void(0);"><i class="ico-share"></i><span>分享</span></a></li>
+    </ul>    
+</div>
+
+<!-- 拖拽虚框 -->
+<div class='ui-selectable-helper' ></div>
+<!-- 拖拽移动小图标 -->
+<div class="filesmall class1">
+    <i></i>
+    <span>21</span>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+</div>
+
+<!-- app安装下载 -->
+<div style="" class="full-pop full-pop-download ui-draggable">
+    <h3 class="full-pop-header"><div class="inner __title">微云Android版</div></h3>
+          
+    <div class="pop-download clear">        
+        <div style="height:247px;" class="qrcode">
+            <img src="img/qrcode.png" alt="二维码">
+        </div>
+        <div class="info">
+            <div class="way way-1">
+                <h4>方法1：下载安装包</h4>
+                <button class="btn-goto" data-id="android">点击开始下载</button>
+            </div>               
+            <div class="way way-2">
+                <h4>方法2：短信获取下载地址</h4>
+                <div data-id="sms_normal">
+                    <p class="desc">请填写手机号，下载地址将发送到您的手机</p>
+                    <div class="phonenum clearfix">
+                        <input type="text" class="ipt-phonenum" data-id="phone_num">
+                        <button class="btn-send">发送短信</button>
+                    </div>
+                </div>
+                <div style="display: none;" class="sms-info clearfix">您将收到一条包含微云下载地址的短信，点击短信中的地址即可开始下载。
+                    <a data-action="resend" href="#">重新发送</a>
+                </div>
+                <div style="display: none;" class="sms-error clearfix"></div>
+            </div>        
+
+        </div>
+    </div>
+    
+    <a title="关闭" class="full-pop-close" href="javascript:void(0);">×</a>
+</div>
+
+<div class="ui-mask ui-mask-white"></div>
+<!-- app安装下载 end -->
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div1 {width: 100px; height: 100px; background: red; position: absolute; left: 0; top: 0;}
+        #div2 {width: 100px; height: 100px; background: green; position: absolute; left: 0; top: 0;}
+    </style>
+    <script src="Drag.js"></script>
+    <script>
+    window.onload = function() {
+
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+
+        var d1 = new Drag(oDiv1);
+
+        var d2 = new Drag2(oDiv2);
+
+        console.log(d2);
+
+    }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0px; 
+		padding: 0px;
+	}
+	.box{
+		background: red;
+		width: 300px;
+		height: 300px;
+	}
+	.ui-selectable-helper{
+		border: 1px dashed #000;
+		background: #E9F3FD;
+		opacity: 0.5;
+	}
+	</style>
+	<script>
+	window.onload = function(){
+		var bDown = false;
+
+		document.onmousedown = function(ev){
+			if(bDown)return false;
+			bDown = true;
+			var ev = ev || event;
+			var disX = ev.clientX;
+			var disY = ev.clientY;
+			var oDiv = document.createElement('div');
+			oDiv.style.left = ev.clientX + 'px';
+			oDiv.style.top = ev.clientY + 'px';
+			document.onmousemove = function(ev){
+				var ev = ev || event;
+				
+				oDiv.style.position = 'absolute';
+				oDiv.style.display = 'block';
+				oDiv.className = 'ui-selectable-helper';
+				document.body.appendChild(oDiv);
+				//向左
+				if(disX > ev.clientX){
+					oDiv.style.left = disX - (disX - ev.clientX)  + 'px';
+					oDiv.style.width = disX - ev.clientX + 'px';
+				}
+				//向右
+				if(disX < ev.clientX){
+					oDiv.style.width = ev.clientX - disX + 'px';
+				}
+				//向上
+				if(disY > ev.clientY){
+					oDiv.style.top = disY - (disY - ev.clientY)  + 'px';
+					oDiv.style.height = disY - ev.clientY + 'px';
+				}
+				//向下
+				if(disY < ev.clientY){
+					oDiv.style.height = ev.clientY - disY + 'px';
+				}
+				
+			};
+			document.onmouseup = function(){
+				bDown = false;
+				document.body.removeChild(oDiv);
+				document.onmouseup = document.onmousemove = null;
+			}
+			return false;
+		};
+	};
+	</script>
+</head>
+<body>
+
+	<div class="box">sss</div>
+	<div class="box">xxxx</div>
+</body>
+</html>
